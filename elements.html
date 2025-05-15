@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Editorial by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+
+            .mt-50{
+
+                margin-top: 50px;
+            }
+
+            .mb-50{
+
+                margin-bottom: 50px;
+            }
+
+
+
+            .card {
+                position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: 1px solid rgba(0,0,0,.125);
+                border-radius: .1875rem;
+            }
+
+            .card-img-actions {
+                position: relative;
+            }
+            .card-body {
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                padding: 1.25rem;
+                text-align: center;
+            }
+
+            .card-img{
+
+                width: 350px;
+            }
+
+            .star{
+                    color: red;
+            }
+
+            .bg-cart {
+                background-color:orange;
+                color:#fff;
+            }
+
+            .bg-cart:hover {
+                
+                color:#fff;
+            }
+
+            .bg-buy {
+                background-color:green;
+                color:#fff;
+                padding-right: 29px;
+            }
+            .bg-buy:hover {
+                
+                color:#fff;
+            }
+            a{
+
+                text-decoration: none !important;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1000;
+                display: none;
+                float: left;
+                min-width: 10rem;
+                padding: .5rem 0;
+                margin: .125rem 0 0;
+                font-size: 1rem;
+                color: #212529;
+                text-align: left;
+                list-style: none;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid rgba(0,0,0,.15);
+                border-radius: .25rem;
+            }
+
+            .dropdown-item {
+                display: block;
+                width: 100%;
+                padding: .25rem 1.5rem;
+                clear: both;
+                font-weight: 400;
+                color: #212529;
+                text-align: inherit;
+                white-space: nowrap;
+                background-color: transparent;
+                border: 0;
+            }
+
+            .dropdown-item:hover, .dropdown-item:focus {
+                color: #16181b;
+                text-decoration: none;
+                background-color: #f8f9fa;
+            }
+        </style>
+        <script>
+            const sortByButton = document.getElementById('sort-by');
+            const sortByNameButton = document.getElementById('sort-by-name');
+            const sortByPriceButton = document.getElementById('sort-by-price');
+            const cards = document.querySelectorAll('.card');
+
+            sortByButton.addEventListener('click', () => {
+            if (sortByButton.innerText === 'Sort by Name') {
+                sortByName();
+                sortByButton.innerText = 'Sort by Price';
+            } else {
+                sortByPrice();
+                sortByButton.innerText = 'Sort by Name';
+            }
+            });
+
+            sortByNameButton.addEventListener('click', sortByName);
+            sortByPriceButton.addEventListener('click', sortByPrice);
+
+            function sortByName() {
+            cards.forEach((card) => {
+                const cardName = card.querySelector('h6 a').innerText;
+                card.style.order = cardName;
+            });
+            }
+
+            function sortByPrice() {
+            cards.forEach((card) => {
+                const cardPrice = parseFloat(card.querySelector('h3').innerText);
+                card.style.order = cardPrice;
+            });
+            }
+        </script>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html"><img src="images/var2.png" alt="Логотип" class="center"></a>
+								</header>
+
+                            <div class="panel-heading">
+                                <div class="btn-group pull-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Filter history <i class="fa fa-filter"></i></button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="#">Approved orders</a></li>
+                                            <li><a href="#">Pending orders</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Section -->
+                            <div class="container d-flex justify-content-center mt-50 mb-50">
+            
+                                <div class="row">
+                                   <div class="col-md-4 mt-2">
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt="">  
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                                                                <h3 class="mb-0 font-weight-semibold">$122.22</h3>
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'firstproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button>      
+                                                            </div>
+                                                        </div>
+                                   </div> 
+                        
+                        
+                                   <div class="col-md-4 mt-2">
+                                    
+                                        
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                    
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt="">
+                                                                      
+                                                                   
+                                                                </div>
+                                                            </div>
+                        
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                        
+                                                                <h3 class="mb-0 font-weight-semibold">$220.99</h3>
+                        
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                        
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                        
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'secondproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button>     
+                                                            </div>
+                                                        </div>
+            
+                                   </div> 
+                        
+                                   <div class="col-md-4 mt-2">
+                                    
+                                        
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                    
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt="">
+                                                                      
+                                                                   
+                                                                </div>
+                                                            </div>
+                        
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                        
+                                                                <h3 class="mb-0 font-weight-semibold">$200.99</h3>
+                        
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                        
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                        
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'thirdproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button>
+                        
+                                                                
+                                                            </div>
+                                                        </div>
+                        
+                        
+                                                    
+                                                     
+                                   </div> 
+                        
+                        
+                                   <div class="col-md-4 mt-2">
+                                    
+                                        
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                    
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt="">
+                                                                      
+                                                                   
+                                                                </div>
+                                                            </div>
+                        
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                        
+                                                                <h3 class="mb-0 font-weight-semibold">$10.99</h3>
+                        
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                        
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'fourthproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button> 
+                                                            </div>
+                                                        </div>           
+                                   </div> 
+
+                                   <div class="col-md-4 mt-2">
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt="">
+                                                                </div>
+                                                            </div>
+                        
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                                                                <h3 class="mb-0 font-weight-semibold">$20.99</h3>
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'fifthproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button>
+                                                            </div>
+                                                        </div>       
+                                   </div> 
+                        
+                        
+                                   <div class="col-md-4 mt-2">
+                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="card-img-actions">
+                                                                        <img src="images/pic01.jpg" class="card-img img-fluid" width="96" height="350" alt=""> 
+                                                                </div>
+                                                            </div>
+                        
+                                                            <div class="card-body bg-light text-center">
+                                                                <div class="mb-2">
+                                                                    <h6 class="font-weight-semibold mb-2">
+                                                                        <a href="#" class="text-default mb-2" data-abc="true">Toshiba Notebook with 500GB HDD & 8GB RAM</a>
+                                                                    </h6>
+                        
+                                                                    <a href="#" class="text-muted" data-abc="true">Laptops & Notebooks</a>
+                                                                </div>
+                        
+                                                                <h3 class="mb-0 font-weight-semibold">$999.99</h3>
+                        
+                                                                <div>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                   <i class="fa fa-star star"></i>
+                                                                </div>
+                        
+                                                                <div class="text-muted mb-3">34 reviews</div>
+                        
+                                                                <button type="button" class="btn bg-cart" onclick="window.location.href = 'sixthproduct.html'">
+                                                                    <i class="fa fa-cart-plus mr-2"></i>Перейти до товару
+                                                                </button>
+                                                            </div>
+                                                        </div>        
+                                   </div> 
+                                </div>
+                            </div>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+                            <nav id="menu">
+                                <header class="major">
+                                    <h2>Menu</h2>
+                                </header>
+                                <ul>
+                                    <li><a href="index.html">Main Menu</a></li>
+                                    <li><a href="generic.html">Profile</a></li>
+                                    <li><a href="elements.html">Store</a></li>
+                                    <li><a href="temp_orderlist.html">Order List</a></li>
+                                    <li>
+                                        <span class="opener">General</span>
+                                        <ul>
+                                            <li><a href="#">Contacts</a></li>
+                                            <li><a href="#">Store Information</a></li>
+                                            <li><a href="single_advisor_profile.html">Dev Stuff</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="loginform.html" class="button fit small">Login</a></li>
+                                </ul>
+                            </nav>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <ul class="contact">
+                                    <li class="icon solid fa-envelope"><a href="#">omnishop_support@gmail.com</a></li>
+                                    <li class="icon solid fa-phone">+4915172689370</li>
+                                    <li class="icon solid fa-home">Bamberg, Luitpoldstraße 14, 96052<br />
+                                    </li>
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; Untitled. All rights reserved</a>.</p>
+                            </footer>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script type="text/javascript"></script>
+
+	</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Logined Profile</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.center{
+				display: block;
+            	margin-left: auto;
+            	margin-right: auto;
+			}
+            .user-profile {
+				position: relative;
+                width: 300px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+			.user-profile img {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 10px;
+				/* Добавлено: */
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+
+            .user-profile h2 {
+                font-size: 24px;
+            }
+
+            .user-profile p {
+                font-size: 18px;
+            }
+
+            label {
+                text-align: left;
+                float:left;
+            }
+            input {
+                clear: both;
+                float: left;
+                text-align: left;
+            }
+            input {
+                clear: both;
+                margin-bottom: 10px;
+            }
+            .main h1{
+                font-size: 50px;
+            }
+			#edit-profile-text {
+  				display: none;
+			}
+			#profile-picture {
+				display: none;
+			}
+            #profile-picture-label {
+                display: none;
+            }
+			#edit-profile-button {
+				position: absolute; /* Добавлено */
+				bottom: 10px; /* Подстройте значение отступа по вашему желанию */
+				left: 50%; /* Подстройте значение отступа по вашему желанию */
+				transform: translateX(-50%); /* Добавлено для центрирования по горизонтали */
+			}
+			.panel-order .row {
+				border-bottom: 1px solid #ccc;
+			}
+			.panel-order .row:last-child {
+				border: 0px;
+			}
+			.panel-order .row .col-md-1  {
+				text-align: center;
+				padding-top: 15px;
+			}
+			.panel-order .row .col-md-1 img {
+				width: 50px;
+				max-height: 50px;
+			}
+			.panel-order .row .row {
+				border-bottom: 0;
+			}
+			.panel-order .row .col-md-11 {
+				border-left: 1px solid #ccc;
+			}
+			.panel-order .row .row .col-md-12 {
+				padding-top: 7px;
+				padding-bottom: 7px; 
+			}
+			.panel-order .row .row .col-md-12:last-child {
+				font-size: 11px; 
+				color: #555;  
+				background: #efefef;
+			}
+			.panel-order .btn-group {
+				margin: 0px;
+				padding: 0px;
+			}
+			.panel-order .panel-body {
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+			.panel-order .panel-deading {
+				margin-bottom: 0;
+			}
+
+			h5{
+				color: rgb(255, 255, 255);
+				background-color: crimson;
+				font-weight: bold;
+				font-size: 19px;
+			}
+	
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html"><img src="images/var2.png" alt="Логотип" class="center"></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1><span id="user-name-header"></span></h1>
+									</header>
+
+									<div class="user-profile">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTk2UqpCk6MOKklDV6ncLXPUZsSja0IRHnx7D5rL3Zmdy4VeAKYrDFFG2ZskVmrzF2lFo&usqp=CAU" alt="User Avatar">
+										<h2>Edogaru</h2>
+										<h5>CUSTOMER</h5>
+										<br>
+										<br>
+										<form id="profile-form">
+											<label for="profile-picture" id="profile-picture-label">Profile Picture:</label>
+											<input type="file" name="profile-picture" id="profile-picture" accept="image/*" style="display: none;">
+											<br>
+											<label for="name">Name:</label>
+											<input type="text" name="name" id="name" placeholder="Name" value="John" readonly>
+											<label for="last_name">Last Name:</label>
+											<input type="text" name="last_name" id="last_name" placeholder="Last Name" value="Doe" readonly>
+											<label for="email">Email:</label>
+											<input type="email" name="email" id="email" placeholder="Email" readonly>
+											<label for="nickname">Nickname:</label>
+											<input type="text" name="nickname" id="nickname" placeholder="Nickname" readonly>
+										</form>
+										
+										<a href="#" onclick="enableEditing()" id="edit-profile-button" class="button">Edit Profile</a>
+										<form id="edit-profile-form">
+											<input type="submit" value="Save Changes" onclick="saveChanges()" id="save-changes-button" style="display: none;">
+										</form>
+									</div>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+								
+									<h1>Order History</h1>
+									<br>
+									<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+									<div class="container bootdey">
+									<div class="panel panel-default panel-order">
+									<div class="panel-heading">
+									<div class="btn-group pull-right">
+									<div class="btn-group">
+									<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Filter history <i class="fa fa-filter"></i></button>
+									<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="#">Approved orders</a></li>
+									<li><a href="#">Pending orders</a></li>
+									</ul>
+									</div>
+									</div>
+									</div>
+									<div class="panel-body">
+									<div class="row">
+									<div class="col-md-1"><img src="https://bootdey.com/img/Content/user_3.jpg" class="media-object img-thumbnail" /></div>
+									<div class="col-md-11">
+									<div class="row">
+									<div class="col-md-12">
+									<div class="pull-right"><label class="label label-danger">rejected</label></div>
+									<span><strong>Order name</strong></span> <span class="label label-info">group name</span><br/>
+									Quantity : 2, cost: $323.13 <br/>
+									<a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#" title="View"></a>
+									<a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#" title="Danger"></a>
+									<a data-placement="top" class="btn btn-info btn-xs glyphicon glyphicon-usd" href="#" title="Danger"></a>
+									</div>
+									<div class="col-md-12">order made on: 05/31/2014 by <a href="#">Jane Doe </a></div>
+									</div>
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-md-1"><img src="https://bootdey.com/img/Content/user_1.jpg" class="media-object img-thumbnail" /></div>
+									<div class="col-md-11">
+									<div class="row">
+									<div class="col-md-12">
+									<div class="pull-right"><label class="label label-info">pending</label></div>
+									<span><strong>Order name</strong></span> <span class="label label-info">group name</span><br/>
+									Quantity : 12, cost: $12623.13<br/>
+									<a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#" title="View"></a>
+									<a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#" title="Danger"></a>
+									<a data-placement="top" class="btn btn-info btn-xs glyphicon glyphicon-usd" href="#" title="Danger"></a>
+									</div>
+									<div class="col-md-12">order made on: 06/12/2014 by <a href="#">Jane Doe </a></div>
+									</div>
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-md-1"><img src="https://bootdey.com/img/Content/user_3.jpg" class="media-object img-thumbnail" /></div>
+									<div class="col-md-11">
+									<div class="row">
+									<div class="col-md-12">
+									<div class="pull-right"><label class="label label-success">Approved</label></div>
+									<span><strong>Order name</strong></span> <span class="label label-info">group name</span><br/>
+									Quantity : 4, cost: $523.13<br/>
+									<a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#" title="View"></a>
+									<a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#" title="Danger"></a>
+									<a data-placement="top" class="btn btn-info btn-xs glyphicon glyphicon-usd" href="#" title="Danger"></a>
+									</div>
+									<div class="col-md-12">order made on: 06/20/2014 by <a href="#">Jane Doe</a></div>
+									</div>
+									</div>
+									</div>
+									<div class="row">
+									<div class="col-md-1"><img src="https://bootdey.com/img/Content/user_2.jpg" class="media-object img-thumbnail" /></div>
+									<div class="col-md-11">
+									<div class="row">
+									<div class="col-md-12">
+									<div class="pull-right"><label class="label label-info">pending</label></div>
+									<span><strong>Order name</strong></span> <span class="label label-info">group name</span><br/>
+									Quantity : 4, cost: $523.13<br/>
+									<a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#" title="View"></a>
+									<a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#" title="Danger"></a>
+									<a data-placement="top" class="btn btn-info btn-xs glyphicon glyphicon-usd" href="#" title="Danger"></a>
+									</div>
+									<div class="col-md-12">order made on: 06/20/2014 by <a href="#">Jane Doe</a></div>
+									</div>
+									</div>
+									</div>
+									</div>
+									<div class="panel-footer">Put here some note for example: bootdey si a gallery of free bootstrap snippets bootdeys</div>
+									</div>
+									</div>
+
+									<script>
+										function enableEditing() {
+											var form = document.getElementById("profile-form");
+											var inputs = form.getElementsByTagName("input");
+											for (var i = 0; i < inputs.length; i++) {
+												inputs[i].removeAttribute("readonly");
+											}
+											document.getElementById("edit-profile-button").style.display = "none";
+											document.getElementById("edit-profile-form").style.display = "block";
+											document.getElementById("save-changes-button").style.display = "block";
+											document.getElementById("profile-picture").style.display = "block";
+											document.getElementById("profile-picture-label").style.display = "block";
+										}
+
+										function saveChanges() {
+											var form = document.getElementById("profile-form");
+											var inputs = form.getElementsByTagName("input");
+											for (var i = 0; i < inputs.length; i++) {
+												inputs[i].setAttribute("readonly", true);
+											}
+											document.getElementById("edit-profile-button").style.display = "block";
+											document.getElementById("edit-profile-form").style.display = "none";
+											document.getElementById("save-changes-button").style.display = "none";
+
+											// Получаем значения, введенные пользователем, и сохраняем их
+											var name = document.getElementById("name").value;
+											var last_name = document.getElementById("last_name").value;
+											var email = document.getElementById("email").value;
+											var nickname = document.getElementById("nickname").value;
+
+											// Обновляем соответствующие поля профиля
+
+											// Обновляем изображение профиля
+											var profilePicture = document.getElementById("profile-picture").files[0];
+											if (profilePicture) {
+												var reader = new FileReader();
+												reader.onload = function(event) {
+													var img = document.createElement('img');
+													img.src = event.target.result;
+													img.width = 200;
+													img.height = 200;
+													img.style.objectFit = 'cover';
+													img.style.borderRadius = '50%';
+													var existingImg = document.querySelector('.user-profile img');
+													existingImg.parentNode.replaceChild(img, existingImg);
+												};
+												reader.readAsDataURL(profilePicture);
+											} else {
+												// Если пользователь не выбрал новое изображение профиля, скрываем текст "Profile Picture" и кнопку выбора файла
+												document.getElementById("profile-picture-label").style.display = "none";
+												document.getElementById("profile-picture").style.display = "none";
+											}
+
+											// Обновляем приветствие с именем и фамилией пользователя
+											var userNameHeader = document.getElementById("user-name-header");
+											userNameHeader.textContent = "Welcome, " + name + " " + last_name;
+
+											// Обновляем текст под картинкой с никнеймом пользователя
+											var nicknameText = document.querySelector('.user-profile h2');
+											nicknameText.textContent = nickname;
+										}
+
+										function changeProfilePicture() {
+											var input = document.createElement('input');
+											input.type = 'file';
+											input.accept = 'image/*';
+											input.onchange = function(event) {
+												var file = event.target.files[0];
+												var reader = new FileReader();
+												reader.onload = function(event) {
+													var img = document.createElement('img');
+													img.src = event.target.result;
+													img.width = 200;
+													img.height = 200;
+													img.style.objectFit = 'cover';
+													img.style.borderRadius = '50%';
+													var profilePicture = document.querySelector('.user-profile img');
+													profilePicture.parentNode.replaceChild(img, profilePicture);
+												};
+												reader.readAsDataURL(file);
+											};
+											input.click();
+										}
+										window.onload = function() {
+											var nameInput = document.getElementById("name");
+											var lastNameInput = document.getElementById("last_name");
+											var userNameHeader = document.getElementById("user-name-header");
+											userNameHeader.textContent = "Welcome, " + nameInput.value + " " + lastNameInput.value;
+										}
+									</script>
+								
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="index.html">Main Menu</a></li>
+									<li><a href="generic.html">Profile</a></li>
+									<li><a href="elements.html">Store</a></li>
+									<li><a href="create_product_page.html">Create Product</a></li>
+									<li>
+										<span class="opener">General</span>
+										<ul>
+											<li><a href="#">Contacts</a></li>
+											<li><a href="#">Store Information</a></li>
+											<li><a href="single_advisor_profile.html">Dev Stuff</a></li>
+										</ul>
+									</li>
+									<li><a href="loginform.html" class="button fit small">Login</a></li>
+								</ul>
+							</nav>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="#">omnishop_support@gmail.com</a></li>
+									<li class="icon solid fa-phone">+4915172689370</li>
+									<li class="icon solid fa-home">Bamberg, Luitpoldstraße 14, 96052<br />
+									</li>
+								</ul>
+							</section>
+
+						<!-- Footer -->
+							<footer id="footer">
+								<p class="copyright">&copy; Untitled. All rights reserved</a>.</p>
+							</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+			<script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script srs="assets/js/script.js"></script>
+	</body>
+</html>
